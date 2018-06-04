@@ -106,8 +106,6 @@ def OpenFile():
 
         this_product['date_list'] = date_list
         this_product['session_list'] = sorted(session_list, key=lambda x: x[1])
-        print(this_product['product_complex'])
-        print(this_product['session_list'])
         product_list[this_product['product_complex']] = this_product
         youroptions.append(this_product['product_complex'])
 
@@ -161,7 +159,7 @@ def PlotLines(xs, ys, cs):
         ax.plot(xs[i:i+2], ys[i:i+2], c=cs[i], zorder=1)
 
 root = tk.Tk()
-root.title("Cumulonimbus v0.1")
+root.title("Cumulonimbus v1.0")
 menu = tk.Menu(root)
 root.config(menu=menu)
 filemenu = tk.Menu(menu)
