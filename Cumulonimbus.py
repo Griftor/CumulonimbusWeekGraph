@@ -22,6 +22,7 @@ product_list = {}
 file_path = ""
 youroptions = []
 
+
 def ToDateTime(my_string):
     return datetime.strptime(my_string, "%Y%m%d%H%M%S%f")
 
@@ -104,7 +105,9 @@ def OpenFile():
                     session_sub_id, line = GetNextValue(line)  # 625
 
         this_product['date_list'] = date_list
-        this_product['session_list'] = session_list
+        this_product['session_list'] = sorted(session_list, key=lambda x: x[1])
+        print(this_product['product_complex'])
+        print(this_product['session_list'])
         product_list[this_product['product_complex']] = this_product
         youroptions.append(this_product['product_complex'])
 
